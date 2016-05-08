@@ -4,7 +4,6 @@
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
-import oauthHandler
 import json
 
 tweetDict = dict() 
@@ -64,7 +63,6 @@ class TweetListener(StreamListener):
 if __name__ == '__main__':
 	parsedTweets = 0
 	listener = TweetListener()
-	auth = oauthHandler.getAuth()
 	stream = Stream(auth, listener)	
 	stream.filter(track=['android']) #This will start the stream and make callbacks to the listener for all tweets containing "android"
 
